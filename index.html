@@ -52,11 +52,11 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
   background:#070A12;
 }
 .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:saturate(1.35) contrast(1.15) brightness(1.02);transform:scale(1.03);opacity:0.92}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:saturate(1.12) contrast(1.12) brightness(0.62);transform:scale(1.03);opacity:0.72}
 .hero-bg::after{content:"";position:absolute;inset:0;background:
-    radial-gradient(860px 520px at 14% -6%, rgba(46,204,113,0.18), transparent 62%),
-    radial-gradient(700px 520px at 86% 12%, rgba(46,204,113,0.10), transparent 65%),
-    linear-gradient(180deg, rgba(11,18,32,0.18) 0%, rgba(7,10,18,0.52) 100%)}
+    radial-gradient(860px 520px at 14% -6%, rgba(46,204,113,0.14), transparent 62%),
+    radial-gradient(700px 520px at 86% 12%, rgba(46,204,113,0.08), transparent 65%),
+    linear-gradient(180deg, rgba(11,18,32,0.48) 0%, rgba(7,10,18,0.78) 100%)}
 .hero::before{
   content:"";position:absolute;inset:0;pointer-events:none;opacity:0.04;z-index:1;
   background-image:
@@ -65,7 +65,7 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 }
 .hero-grid{max-width:var(--max);margin:0 auto;padding:clamp(1.4rem,3vw,2.4rem) var(--pad) clamp(2rem,4vw,3rem);width:100%;min-height:inherit;display:flex;align-items:center;position:relative;z-index:2}
 .hero-copy{max-width:100%;width:50vw;min-width:320px}
-.hero-copy h1{font-family:var(--display);font-size:clamp(3.2rem,5.2vw,5.2rem);line-height:0.92;letter-spacing:-0.04em;margin:0;font-weight:900;color:#fff;text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) both}
+.hero-copy h1{font-family:var(--display);font-size:clamp(4rem,6.2vw,6.8rem);line-height:0.88;letter-spacing:-0.055em;margin:0;font-weight:900;color:#fff;text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) both}
 .hero-sub{margin:0.5rem 0 0;font-family:var(--display);font-size:clamp(3.6rem,8vw,6.2rem);line-height:0.88;letter-spacing:-0.055em;font-weight:900;color:#fff;white-space:nowrap;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) 140ms both}
 .hero-sub span{color:var(--green);font-weight:900}
 @media(max-width:1100px){.hero-copy{width:58vw} .hero-copy h1{font-size:clamp(2.8rem,5.4vw,4.4rem)} .hero-sub{font-size:clamp(3rem,7vw,5.2rem)}}
