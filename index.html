@@ -52,19 +52,18 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
   background:#070A12;
 }
 .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 46%;filter:blur(14px) brightness(0.58) saturate(0.92);transform:scale(1.08);opacity:0.72}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 46%;filter:blur(6px) brightness(0.72) saturate(1.02);transform:scale(1.06);opacity:0.32}
 .hero-bg::after{content:"";position:absolute;inset:0;background:
-    radial-gradient(900px 520px at 14% -6%, rgba(46,204,113,0.20), transparent 62%),
-    radial-gradient(700px 500px at 86% 12%, rgba(46,204,113,0.12), transparent 65%),
-    linear-gradient(180deg, rgba(11,18,32,0.62) 0%, rgba(7,10,18,0.78) 100%)}
+    radial-gradient(900px 520px at 14% -6%, rgba(46,204,113,0.18), transparent 62%),
+    radial-gradient(700px 500px at 86% 12%, rgba(46,204,113,0.10), transparent 65%),
+    linear-gradient(180deg, rgba(11,18,32,0.55) 0%, rgba(7,10,18,0.82) 100%)}
 .hero::before{
   content:"";position:absolute;inset:0;pointer-events:none;opacity:0.04;z-index:1;
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.85'/%3E%3C/svg%3E");
   mix-blend-mode:soft-light;
 }
-.hero-grid{max-width:var(--max);margin:0 auto;padding:clamp(1.2rem,3vw,2rem) var(--pad) clamp(1.6rem,3vw,2.4rem);width:100%;min-height:inherit;display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(1.2rem,3vw,2rem);align-items:center;position:relative;z-index:2}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:1rem}.hero{padding:0.6rem 0}}
+.hero-grid{max-width:var(--max);margin:0 auto;padding:clamp(1.4rem,3vw,2.4rem) var(--pad) clamp(2rem,4vw,3rem);width:100%;min-height:inherit;display:flex;align-items:center;position:relative;z-index:2}
 .hero-copy{max-width:100%;width:50vw;min-width:320px}
 .hero-copy h1{font-family:var(--display);font-size:clamp(3.2rem,5.2vw,5.2rem);line-height:0.92;letter-spacing:-0.04em;margin:0;font-weight:900;color:#fff;text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) both}
 .hero-sub{margin:0.5rem 0 0;font-family:var(--display);font-size:clamp(3.6rem,8vw,6.2rem);line-height:0.88;letter-spacing:-0.055em;font-weight:900;color:#fff;white-space:nowrap;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) 140ms both}
@@ -192,16 +191,11 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 </div></header>
 
 <section class="hero" aria-label="ShieldX — hero">
-  <div class="hero-bg" aria-hidden="true"><img src="assets/images/range-rover.jpg" alt="Range Rover blurred background" loading="eager"></div>
+  <div class="hero-bg" aria-hidden="true"><img src="assets/images/range-rover.jpg" alt="Range Rover — hero background, small opacity" loading="eager"></div>
   <div class="hero-grid">
     <div class="hero-copy">
       <h1>We Protect what matters to you.</h1>
       <p class="hero-sub">We're <span>ShieldX</span></p>
-    </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hero-visual-frame">
-        <img src="assets/images/car-blend.jpg" alt="Benz G-Wagon — rich modern, blended with dark green gradient" loading="eager">
-      </div>
     </div>
   </div>
 </section>
