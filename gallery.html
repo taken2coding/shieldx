@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Project Gallery — ShieldX | shieldx.ng</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0B0B0B;--paper:#FFFCF7;--muted:#6B7280;--line:rgba(255,255,255,0.08);--green:#2ECC71;--green2:#22A85A;--navy:#080C14;--max:1280px;--sans:'Inter',system-ui,sans-serif;--serif:'Instrument Serif',serif;--display:'Satoshi','Inter',system-ui,sans-serif;--pad:clamp(1rem,3vw,2rem)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#FFFCF7;color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.topbar{position:sticky;top:0;z-index:30;background:rgba(8,12,20,0.92);backdrop-filter:blur(10px) saturate(1.2);border-bottom:1px solid rgba(255,255,255,0.06);color:#fff}
+.topbar-inner{max-width:var(--max);margin:0 auto;padding:0.6rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:0.85rem}
+.brand img{width:3rem;height:3rem;background:#fff;border-radius:9px;padding:4px;object-fit:contain;box-shadow:0 4px 18px rgba(0,0,0,0.35),0 0 0 1px rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18)}
+.brand small{display:block;font-size:0.82rem;letter-spacing:0.02em;color:rgba(255,255,255,0.92);font-weight:500;font-style:italic;margin-top:0.15rem}
+.nav{display:flex;gap:1rem;align-items:center;font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,0.65)}
+.nav a:hover{color:#fff}
+.btn{font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;padding:0.75rem 1.1rem;border-radius:999px;display:inline-flex;align-items:center;gap:0.4rem;transition:.15s;border:1px solid transparent}
+.btn-green{background:var(--green);color:var(--ink);border-color:var(--green)}
+.btn-contact{background:var(--green);color:var(--ink);border:1px solid var(--green);padding:0.55rem 1rem;font-size:0.68rem;letter-spacing:0.08em;box-shadow:0 4px 14px rgba(46,204,113,0.22)}
+.btn-contact:hover{background:#fff;border-color:#fff;color:var(--ink);transform:translateY(-1px)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.hero-mini{background:var(--navy);color:#fff;padding:2rem var(--pad) 1.2rem;text-align:center;border-bottom:1px solid rgba(255,255,255,0.08)}
+.hero-mini h1{font-family:var(--serif);font-weight:400;letter-spacing:-0.02em;margin:0;font-size:clamp(2rem,4vw,2.6rem)}
+.hero-mini h1 em{font-style:italic;color:var(--green)}
+.hero-mini p{color:rgba(255,255,255,0.65);max-width:40rem;margin:0.6rem auto 0;font-size:0.88rem}
+.tabs{display:flex;gap:0.6rem;justify-content:center;margin:1.2rem 0 0}
+.tab{padding:0.6rem 1.1rem;border-radius:999px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:.15s}
+.tab.active{background:var(--green);color:var(--ink);border-color:var(--green)}
+.tab:hover{border-color:rgba(255,255,255,0.2)}
+.gallery{background:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill, 300px);justify-content:center;gap:0}
+.card{position:relative;overflow:hidden;background:#F6F1E7;cursor:zoom-in;width:300px;height:300px;max-width:300px;max-height:300px;border:1px solid #E8E2D6}
+.card img, .card video{width:300px;height:300px;object-fit:cover;display:block;filter:saturate(1.02) contrast(1.02)}
+.card:hover img{transform:scale(1.02)}
+.card-meta{position:absolute;inset:auto 0 0 0;padding:0.45rem 0.5rem;background:linear-gradient(180deg, transparent, rgba(11,11,11,0.72));color:#fff;display:flex;justify-content:space-between;font-size:0.62rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:700}
+.hidden{display:none}
+.lightbox{position:fixed;inset:0;background:rgba(5,7,10,0.92);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:60;padding:1rem}
+.lightbox.open{display:flex}
+.lightbox img, .lightbox video{max-width:min(92vw,1100px);max-height:86vh;width:100%;height:auto;object-fit:contain;border:1px solid rgba(255,255,255,0.14);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.lightbox-close{position:absolute;top:1rem;right:1rem;background:#fff;color:var(--ink);border:none;border-radius:999px;padding:0.55rem 0.85rem;font-weight:800;cursor:pointer}
+.footer{background:#05070A;color:rgba(255,255,255,0.65);border-top:1px solid rgba(255,255,255,0.06);padding:1.4rem var(--pad);text-align:center;font-size:0.72rem}
+.footer a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="shieldx.html"><img src="shieldX_logo.jpeg" alt="ShieldX"/><span><small>Fortifying Your Peace Of Mind</small></span></a>
+  <nav class="nav"><a href="shieldx.html#services">Services</a><a href="gallery.html" style="color:#fff;border-bottom:1px solid #2ECC71;padding-bottom:0.15rem">Project Gallery</a></nav>
+  <a href="shieldx.html#contact" class="btn btn-contact">Contact Us</a>
+</div></header>
+
+<div class="hero-mini">
+  <h1>Project <em>Gallery</em></h1>
+  <p>Toggle between pictures and videos — all thumbnails capped at 300×300, click to expand to full width.</p>
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="pics" role="tab" aria-selected="true">Picture Gallery</button>
+    <button class="tab" data-tab="videos" role="tab" aria-selected="false">Video Gallery</button>
+  </div>
+</div>
+
+<section class="gallery">
+  <div class="wrap" style="padding:0">
+    <div id="pics" class="grid">
+      <a class="card" href="assets/images/car-blend.jpg"><img src="assets/images/car-blend.jpg" alt="Benz G-Wagon" loading="lazy"><span class="card-meta">Benz G-Wagon • Tracking</span></a>
+      <a class="card" href="assets/images/range-rover.jpg"><img src="assets/images/range-rover.jpg" alt="Range Rover" loading="lazy"><span class="card-meta">Range Rover • Fleet</span></a>
+      <a class="card" href="assets/images/solar-panel.jpg"><img src="assets/images/solar-panel.jpg" alt="Solar" loading="lazy"><span class="card-meta">Solar • Hybrid</span></a>
+      <a class="card" href="assets/images/cctv-camera.jpg"><img src="assets/images/cctv-camera.jpg" alt="CCTV" loading="lazy"><span class="card-meta">CCTV • 4K</span></a>
+      <a class="card" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM.jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM.jpeg" alt="Project" loading="lazy"><span class="card-meta">Estate • Lekki</span></a>
+      <a class="card" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(1).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(1).jpeg" alt="Project" loading="lazy"><span class="card-meta">Fence • 12-line</span></a>
+      <a class="card" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(2).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(2).jpeg" alt="Project" loading="lazy"><span class="card-meta">CCTV • NVR</span></a>
+      <a class="card" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.06%20PM%20(1).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.06%20PM%20(1).jpeg" alt="Project" loading="lazy"><span class="card-meta">Solar • Lithium</span></a>
+      <a class="card" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.06%20PM.jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.06%20PM.jpeg" alt="Project" loading="lazy"><span class="card-meta">Perimeter • Siren</span></a>
+      <a class="card" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.07%20PM%20(2).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.07%20PM%20(2).jpeg" alt="Project" loading="lazy"><span class="card-meta">Survey • Site</span></a>
+      <a class="card" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.08%20PM%20(1).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.08%20PM%20(1).jpeg" alt="Project" loading="lazy"><span class="card-meta">Install • Cabling</span></a>
+      <a class="card" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.09%20PM.jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.09%20PM.jpeg" alt="Project" loading="lazy"><span class="card-meta">Gate • Estate</span></a>
+    </div>
+    <div id="videos" class="grid hidden">
+      <a class="card" href="https://videos.pexels.com/video-files/31967865/13622106_2560_1440_30fps.mp4" data-video><video src="https://videos.pexels.com/video-files/31967865/13622106_2560_1440_30fps.mp4" muted loop playsinline preload="metadata" poster="assets/images/range-rover.jpg"></video><span class="card-meta">Lagos Street • Drone ▶</span></a>
+      <a class="card" href="https://videos.pexels.com/video-files/13211307/13211307-hd_1920_1080_60fps.mp4" data-video><video src="https://videos.pexels.com/video-files/13211307/13211307-hd_1920_1080_60fps.mp4" muted loop playsinline preload="metadata" poster="assets/images/car-blend.jpg"></video><span class="card-meta">Highway • Tracking ▶</span></a>
+      <a class="card" href="https://videos.pexels.com/video-files/18069234/18069234-hd_1920_1080_24fps.mp4" data-video><video src="https://videos.pexels.com/video-files/18069234/18069234-hd_1920_1080_24fps.mp4" muted loop playsinline preload="metadata"></video><span class="card-meta">CCTV • Night ▶</span></a>
+      <a class="card" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.10%20PM.jpeg" data-video><video muted loop playsinline poster="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.10%20PM.jpeg"><source src="https://videos.pexels.com/video-files/31915786/13675330_1920_1080_30fps.mp4" type="video/mp4"></video><span class="card-meta">Solar • Install ▶</span></a>
+    </div>
+  </div>
+</section>
+
+<div id="lightbox" class="lightbox" aria-hidden="true"><button class="lightbox-close">✕</button><img alt="Expanded"><video controls playsinline style="display:none"></video></div>
+
+<footer class="footer">© 2026 ShieldX • <a href="shieldx.html">Back to home</a> • shieldx.ng</footer>
+
+<script>
+const tabs=[...document.querySelectorAll('.tab')], pics=document.getElementById('pics'), videos=document.getElementById('videos');
+tabs.forEach(b=>b.addEventListener('click',()=>{
+  tabs.forEach(x=>{x.classList.remove('active'); x.setAttribute('aria-selected','false')});
+  b.classList.add('active'); b.setAttribute('aria-selected','true');
+  const t=b.dataset.tab;
+  if(t==='pics'){pics.classList.remove('hidden'); videos.classList.add('hidden');}
+  else {videos.classList.remove('hidden'); pics.classList.add('hidden');}
+}));
+const lb=document.getElementById('lightbox'), lbImg=lb.querySelector('img'), lbVid=lb.querySelector('video'), lbClose=lb.querySelector('.lightbox-close');
+function openImg(src){ lbVid.style.display='none'; lbVid.pause(); lbImg.style.display=''; lbImg.src=src; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+function openVideo(src){ lbImg.style.display='none'; lbImg.removeAttribute('src'); lbVid.style.display=''; lbVid.src=src; lbVid.play(); lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+document.getElementById('pics').addEventListener('click', e=>{
+  const a=e.target.closest('a.card'); if(!a) return; e.preventDefault(); openImg(a.href);
+});
+document.getElementById('videos').addEventListener('click', e=>{
+  const a=e.target.closest('a.card'); if(!a) return; e.preventDefault(); const href=a.getAttribute('href'); openVideo(href);
+});
+function closeLb(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; lbImg.removeAttribute('src'); lbVid.pause(); lbVid.removeAttribute('src'); lbVid.style.display='none'; lbImg.style.display=''; }
+lbClose.addEventListener('click', closeLb);
+lb.addEventListener('click', e=>{ if(e.target===lb) closeLb(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape' && lb.classList.contains('open')) closeLb(); });
+</script>
+</body>
+</html>

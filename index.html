@@ -42,31 +42,35 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 .btn-contact{background:var(--green);color:var(--ink);border:1px solid var(--green);padding:0.55rem 1rem;font-size:0.68rem;letter-spacing:0.08em;box-shadow:0 4px 14px rgba(46,204,113,0.22)}
 .btn-contact:hover{background:#fff;border-color:#fff;color:var(--ink);transform:translateY(-1px);box-shadow:0 6px 18px rgba(255,255,255,0.16),0 4px 14px rgba(46,204,113,0.18)}
 @media(max-width:900px){.nav{display:none}}
-/* hero — rectangle full viewport, dark+green, left bulky copy + initial Benz SUV right */
+/* hero — blurred Range Rover background rich modern */
 .hero{
   color:#fff;position:relative;overflow:hidden;
   min-height:100vh;
   min-height:100dvh;
   display:flex;align-items:center;
   border-radius:0;
-  background:
-    radial-gradient(900px 520px at 12% -10%, rgba(46,204,113,0.18), transparent 62%),
-    radial-gradient(700px 500px at 88% 12%, rgba(46,204,113,0.10), transparent 65%),
-    linear-gradient(180deg, #0B1220 0%, #070A12 100%);
+  background:#070A12;
 }
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 46%;filter:blur(14px) brightness(0.58) saturate(0.92);transform:scale(1.08);opacity:0.72}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(900px 520px at 14% -6%, rgba(46,204,113,0.20), transparent 62%),
+    radial-gradient(700px 500px at 86% 12%, rgba(46,204,113,0.12), transparent 65%),
+    linear-gradient(180deg, rgba(11,18,32,0.62) 0%, rgba(7,10,18,0.78) 100%)}
 .hero::before{
-  content:"";position:absolute;inset:0;pointer-events:none;opacity:0.045;z-index:1;
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:0.04;z-index:1;
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.85'/%3E%3C/svg%3E");
   mix-blend-mode:soft-light;
 }
-.hero-grid{max-width:var(--max);margin:0 auto;padding:clamp(1.2rem,3vw,2rem) var(--pad) clamp(1.6rem,3vw,2.4rem);width:100%;min-height:inherit;display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(1.2rem,3vw,2rem);align-items:center;position:relative;z-index:2}
+.hero-grid{max-width:var(--max);margin:0 auto;padding:clamp(1.2rem,3vw,2rem) var(--pad) clamp(1.6rem,3vw,2.4rem);width:100%;min-height:inherit;display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(1.2rem,3vw,2rem);align-items:center;position:relative;z-index:2}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:1rem}.hero{padding:0.6rem 0}}
-.hero-copy{max-width:100%}
-.hero-copy h1{font-family:var(--display);font-size:clamp(1.9rem,3.2vw,2.8rem);line-height:1.05;letter-spacing:-0.02em;margin:0;font-weight:700;color:rgba(255,255,255,0.96);text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) both;white-space:nowrap}
-.hero-sub{margin:0.45rem 0 0;font-family:var(--display);font-size:clamp(3.4rem,9vw,7.8rem);line-height:0.78;letter-spacing:-0.055em;font-weight:900;color:#fff;text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) 140ms both}
+.hero-copy{max-width:100%;width:50vw;min-width:320px}
+.hero-copy h1{font-family:var(--display);font-size:clamp(3.2rem,5.2vw,5.2rem);line-height:0.92;letter-spacing:-0.04em;margin:0;font-weight:900;color:#fff;text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) both}
+.hero-sub{margin:0.5rem 0 0;font-family:var(--display);font-size:clamp(3.6rem,8vw,6.2rem);line-height:0.88;letter-spacing:-0.055em;font-weight:900;color:#fff;white-space:nowrap;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) 140ms both}
 .hero-sub span{color:var(--green);font-weight:900}
-@media(max-width:900px){.hero-copy h1{white-space:normal;font-size:clamp(1.4rem,4.5vw,1.9rem)} .hero-sub{font-size:clamp(2.8rem,11vw,4.8rem)}}
+@media(max-width:1100px){.hero-copy{width:58vw} .hero-copy h1{font-size:clamp(2.8rem,5.4vw,4.4rem)} .hero-sub{font-size:clamp(3rem,7vw,5.2rem)}}
+@media(max-width:900px){.hero-copy{width:100%;min-width:0} .hero-copy h1{font-size:clamp(2.2rem,8vw,3.2rem)} .hero-sub{white-space:normal;font-size:clamp(2.8rem,11vw,4.8rem)}}
 .hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
 .hero-visual-frame{position:relative;width:96%;max-width:560px;aspect-ratio:3/3.35;overflow:hidden;border:1px solid rgba(255,255,255,0.10);background:
     radial-gradient(560px 320px at 18% 18%, rgba(46,204,113,0.16), transparent 62%),
@@ -181,13 +185,14 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 <body>
 <header class="topbar"><div class="topbar-inner">
   <a class="brand" href="#"><img src="shieldX_logo.jpeg" alt="ShieldX"/><span><small>Fortifying Your Peace Of Mind</small></span></a>
-  <nav class="nav"><a href="#services">Services</a><a href="#projects">Project Gallery</a></nav>
+  <nav class="nav"><a href="#services">Services</a><a href="gallery.html">Project Gallery</a></nav>
   <div style="display:flex;gap:0.5rem;align-items:center">
      <a href="#contact" class="btn btn-contact">Contact Us</a>
    </div>
 </div></header>
 
 <section class="hero" aria-label="ShieldX — hero">
+  <div class="hero-bg" aria-hidden="true"><img src="assets/images/range-rover.jpg" alt="Range Rover blurred background" loading="eager"></div>
   <div class="hero-grid">
     <div class="hero-copy">
       <h1>We Protect what matters to you.</h1>
@@ -208,37 +213,7 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 </div>
 </div>
 
-<section id="projects" class="gallery" aria-label="Project Gallery">
-  <div class="wrap" style="padding:1.8rem var(--pad) 1.6rem">
-    <div style="display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap">
-      <div>
-        <div class="kicker" style="background:var(--paper-2);border:1px solid #E8E2D6;color:var(--muted)">Project Gallery</div>
-        <h2 style="font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);margin:0.5rem 0 0;font-weight:400;letter-spacing:-0.02em">Field work — <em style="font-family:var(--display);font-style:italic;font-weight:300">as built</em></h2>
-        <p style="color:var(--muted);max-width:38rem;margin:0.5rem 0 0;font-size:0.88rem;line-height:1.5">Every image from <code style="background:var(--paper-2);border:1px solid var(--line);padding:0.1rem 0.35rem;border-radius:6px;font-size:0.78rem">shieldx-website/assets/images</code> — estates, fleets, CCTV, fencing & solar. Click to expand.</p>
-      </div>
-      <span style="font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:700">56 installs • Lagos → nationwide</span>
-    </div>
-    <div class="gallery-grid" id="gallery-grid">
-      <a class="gallery-card wide" href="assets/images/car-benz-suv.jpg"><img src="assets/images/car-benz-suv.jpg" alt="Benz SUV tracking — dark green blend" loading="lazy"><span class="gallery-meta"><b>Tracking</b><span>Ignition-cut</span></span></a>
-      <a class="gallery-card tall" href="assets/images/solar-panel.jpg"><img src="assets/images/solar-panel.jpg" alt="Solar hybrid" loading="lazy"><span class="gallery-meta"><b>Solar</b><span>Hybrid 10kVA</span></span></a>
-      <a class="gallery-card tall" href="assets/images/cctv-camera.jpg"><img src="assets/images/cctv-camera.jpg" alt="CCTV 4K ANPR" loading="lazy"><span class="gallery-meta"><b>CCTV</b><span>4K ANPR</span></span></a>
-      <a class="gallery-card square" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM.jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM.jpeg" alt="Project 01" loading="lazy"><span class="gallery-meta"><b>Estate 01</b><span>Lekki</span></span></a>
-      <a class="gallery-card square" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(1).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(1).jpeg" alt="Project 02" loading="lazy"><span class="gallery-meta"><b>Fence</b><span>12-line</span></span></a>
-      <a class="gallery-card square" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(2).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(2).jpeg" alt="Project 03" loading="lazy"><span class="gallery-meta"><b>CCTV</b><span>NVR</span></span></a>
-      <a class="gallery-card square" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.06%20PM%20(1).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.06%20PM%20(1).jpeg" alt="Project 04" loading="lazy"><span class="gallery-meta"><b>Solar</b><span>Lithium</span></span></a>
-      <a class="gallery-card wide" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.06%20PM.jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.06%20PM.jpeg" alt="Project 05" loading="lazy"><span class="gallery-meta"><b>Perimeter</b><span>Siren</span></span></a>
-      <a class="gallery-card tall" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.07%20PM%20(2).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.07%20PM%20(2).jpeg" alt="Project 06" loading="lazy"><span class="gallery-meta"><b>Site</b><span>Survey</span></span></a>
-      <a class="gallery-card tall" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.08%20PM%20(1).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.08%20PM%20(1).jpeg" alt="Project 07" loading="lazy"><span class="gallery-meta"><b>Install</b><span>Cabling</span></span></a>
-      <a class="gallery-card square" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.09%20PM.jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.09%20PM.jpeg" alt="Project 08" loading="lazy"><span class="gallery-meta"><b>Estate</b><span>Gate</span></span></a>
-      <a class="gallery-card square" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.10%20PM.jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.10%20PM.jpeg" alt="Project 09" loading="lazy"><span class="gallery-meta"><b>Fleet</b><span>Tracking</span></span></a>
-    </div>
-    <div style="margin-top:0.8rem;display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center">
-      <span style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">All photos local — </span><code style="font-size:0.72rem;background:var(--paper-2);border:1px solid var(--line);padding:0.25rem 0.5rem;border-radius:999px">assets/images/*</code>
-      <a href="#contact" class="btn btn-green" style="margin-left:auto;padding:0.6rem 0.9rem;font-size:0.68rem">Request similar →</a>
-    </div>
-  </div>
-</section>
-<div id="lightbox" class="lightbox" aria-hidden="true"><button class="lightbox-close" aria-label="Close">✕</button><img alt="Expanded project image"></div>
+
 
 <div class="light">
 <div class="wrap">
@@ -384,7 +359,7 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
       <div style="font-size:0.72rem;color:rgba(255,255,255,0.6);margin-top:0.6rem">Lagos • Nationwide • CAC Licensed • Fortifying your peace of mind • Africa/Lagos</div>
       <div style="font-size:0.72rem;margin-top:0.6rem"><a href="mailto:hello@shieldx.ng">hello@shieldx.ng</a> • <a href="tel:+2348135078459">08135078459</a> • <a href="https://wa.me/2348135078459">WhatsApp</a></div>
     </div>
-    <div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:0.72rem;align-items:center"><a href="#services">Services</a><a href="#projects">Project Gallery</a></div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:0.72rem;align-items:center"><a href="#services">Services</a><a href="gallery.html">Project Gallery</a></div>
   </div>
   <div style="max-width:var(--max);margin:0 auto;margin-top:1rem;padding:0 var(--pad);padding-top:0.8rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4)"><span>© ShieldX Limited. All Rights Reserved.</span><span>shieldx.ng • Fortifying your peace of mind</span></div>
 </footer>
