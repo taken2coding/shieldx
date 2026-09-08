@@ -1,17 +1,18 @@
 # ShieldX Website — shieldx.ng
-Folder: `shieldx-website/` — main file `shieldx.html` (also `index.html` for static hosts)
+Folder: `shieldx-website/` — main file `index.html`
 
 ## Run locally
 ```
 cd shieldx-website
 python3 -m http.server 8000
-# http://localhost:8000/shieldx.html
+# http://localhost:8000/
 ```
 
 ## Deploy on Render (Static Site)
 - Root Directory: `shieldx-website`
 - Publish Directory: `./`
 - Build Command: (empty)
-- Entry: `shieldx.html` (with `index.html` fallback)
+- Entry: `index.html`
 
-Hero: Benz 2024 background (Unsplash) with dark overlay, Syne 800 expressive, 100dvh rectangle, fluid fade-in.
+Hero: hero_image.jpeg dimmer rich, Satoshi 900, 50vw half-page.
+Gallery: gallery.html — toggle pics/videos 300x300 lightbox full width.
