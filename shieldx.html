@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>ShieldX — Fortifying your peace of mind | shieldx.ng</title>
 <meta name="description" content="ShieldX — Lagos, nationwide. Vehicle tracking, CCTV, electric fencing, solar. One crew, 24/7. Fortifying your peace of mind."/>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#0B0B0B;--paper:#FFFCF7;--muted:#6B7280;--line:rgba(255,255,255,0.08);
   --green:#2ECC71;--green2:#22A85A;--navy:#080C14;--navy2:#0B1220;
   --max:1280px;--sans:'Inter',system-ui,sans-serif;--serif:'Instrument Serif',serif;
-  --display:'Syne','Space Grotesk',system-ui,sans-serif;
+  --display:'Clash Display','Syne','Space Grotesk',system-ui,sans-serif;
   --pad:clamp(1rem,3vw,2rem);
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -40,32 +41,37 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 .btn-contact{background:var(--green);color:var(--ink);border:1px solid var(--green);padding:0.85rem 1.45rem;font-size:0.78rem;letter-spacing:0.06em;box-shadow:0 6px 18px rgba(46,204,113,0.25)}
 .btn-contact:hover{background:#fff;border-color:#fff;color:var(--ink);transform:translateY(-1px);box-shadow:0 8px 22px rgba(255,255,255,0.18),0 6px 18px rgba(46,204,113,0.2)}
 @media(max-width:900px){.nav{display:none}}
-/* hero — rectangle, full viewport, Benz background + dark overlay + subtle texture, expressive fluid fade */
+/* hero — rectangle, full viewport, video + dark overlay + subtle texture, ultra-bold expressive */
 .hero{
-  background:
-    linear-gradient(180deg, rgba(11,18,32,0.78) 0%, rgba(7,10,18,0.88) 100%),
-    radial-gradient(900px 520px at 12% -10%, rgba(46,204,113,0.22), transparent 62%),
-    radial-gradient(700px 500px at 88% 12%, rgba(46,204,113,0.12), transparent 65%),
-    url("https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1920&q=80&auto=format&fit=crop") center/cover no-repeat;
   color:#fff;position:relative;overflow:hidden;
   min-height:100vh;
   min-height:100dvh;
   display:flex;align-items:center;
   border-radius:0;
+  background:#070A12;
+}
+.hero-video{position:absolute;inset:0;overflow:hidden;z-index:0}
+.hero-video video{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.62) contrast(1.08) saturate(0.95)}
+.hero-video::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(11,18,32,0.72) 0%, rgba(7,10,18,0.88) 100%),
+    radial-gradient(900px 520px at 12% -10%, rgba(46,204,113,0.20), transparent 62%),
+    radial-gradient(700px 500px at 88% 12%, rgba(46,204,113,0.10), transparent 65%);
 }
 .hero::before{
-  content:"";position:absolute;inset:0;pointer-events:none;opacity:0.06;
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:0.05;z-index:1;
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.85'/%3E%3C/svg%3E");
   mix-blend-mode:soft-light;
 }
-.hero-inner{max-width:var(--max);margin:0 auto;padding:clamp(2rem,4vw,3.5rem) var(--pad);width:100%;min-height:inherit;display:flex;align-items:center;justify-content:flex-start;position:relative;z-index:1}
-.hero-copy{max-width:1180px;width:100%}
-.hero-copy h1{font-family:var(--display);font-size:clamp(3.6rem,9.2vw,7.8rem);line-height:0.82;letter-spacing:-0.06em;margin:0;font-weight:800;color:#fff;text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) both}
+.hero-inner{max-width:var(--max);margin:0 auto;padding:clamp(2rem,4vw,3.5rem) var(--pad);width:100%;min-height:inherit;display:flex;align-items:center;justify-content:flex-start;position:relative;z-index:2}
+.hero-copy{max-width:1240px;width:100%}
+.hero-copy h1{font-family:var(--display);font-size:clamp(3.8rem,11.2vw,9rem);line-height:0.78;letter-spacing:-0.065em;margin:0;font-weight:700;color:#fff;text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) both}
 .hero-copy h1 span, .hero-copy h1 em{color:var(--green);font-style:normal}
-.hero-sub{margin:0.85rem 0 0;font-family:var(--display);font-size:clamp(2.2rem,6.5vw,4.8rem);line-height:0.88;letter-spacing:-0.055em;font-weight:800;color:#fff;text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) 140ms both}
-.hero-sub span{color:var(--green);font-weight:800}
-@keyframes heroIn{from{opacity:0;transform:translateY(18px) scale(0.985);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+.hero-sub{margin:0.55rem 0 0;font-family:var(--display);font-size:clamp(2.4rem,7vw,5.2rem);line-height:0.84;letter-spacing:-0.06em;font-weight:700;color:#fff;text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) 140ms both}
+.hero-sub span{color:var(--green);font-weight:700}
+@keyframes heroIn{from{opacity:0;transform:translateY(20px) scale(0.982);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
 @media(prefers-reduced-motion:reduce){.hero-copy h1,.hero-sub{animation:none}} 
 @media(max-width:1000px){.hero{min-height:100vh;min-height:100dvh}}
 .kicker{font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);font-weight:700;display:inline-flex;gap:0.4rem;align-items:center;background:rgba(46,204,113,0.12);border:1px solid rgba(46,204,113,0.25);padding:0.3rem 0.6rem;border-radius:999px}
@@ -163,6 +169,11 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 </div></header>
 
 <section class="hero" aria-label="ShieldX — hero">
+  <div class="hero-video" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1920&q=80&auto=format&fit=crop">
+      <source src="https://videos.pexels.com/video-files/13211307/13211307-hd_1920_1080_60fps.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero-inner">
     <div class="hero-copy">
       <h1>We Protect<br>what matters<br>to you.</h1>
