@@ -67,9 +67,16 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 .hero-sub{margin:0.8rem 0 0;font-family:var(--serif);font-weight:400;line-height:0.86;letter-spacing:-0.03em;color:#fff;font-size:clamp(2.2rem,4.2vw,3.6rem);text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) 140ms both}
 .hero-sub em{font-family:var(--display);font-style:italic;font-weight:300;letter-spacing:-0.04em;color:var(--green)}
 .hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
-.hero-visual-frame{position:relative;width:92%;max-width:520px;aspect-ratio:3/3.4;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);box-shadow:0 18px 40px rgba(0,0,0,0.35)}
-.hero-visual-frame img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;filter:saturate(1.02) contrast(1.02)}
-.hero-visual-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 62%, rgba(7,10,18,0.28) 100%);pointer-events:none}
+.hero-visual-frame{position:relative;width:96%;max-width:560px;aspect-ratio:3/3.35;overflow:visible;border:none;background:transparent}
+.parallax-scene{position:relative;width:100%;height:100%;min-height:440px;perspective:900px}
+.p-layer{position:absolute;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.10);box-shadow:0 18px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.06);background:#0B0F1A;will-change:transform;transition:transform 0.12s linear}
+.p-layer img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.02) contrast(1.05) brightness(0.96)}
+.p-layer::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 55%, rgba(7,10,18,0.42) 100%), radial-gradient(420px 220px at 18% 18%, rgba(46,204,113,0.14), transparent 62%);pointer-events:none}
+.p-layer-car{left:10%;right:6%;bottom:2%;height:58%;z-index:1;transform:rotate(-0.6deg)}
+.p-layer-solar{left:2%;top:6%;width:56%;height:38%;z-index:2;transform:rotate(1deg)}
+.p-layer-cctv{right:2%;top:32%;width:48%;height:34%;z-index:3;transform:rotate(-0.8deg);border-color:rgba(46,204,113,0.22);box-shadow:0 18px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(46,204,113,0.18)}
+.p-layer-label{position:absolute;left:0.55rem;bottom:0.5rem;z-index:2;background:rgba(11,18,32,0.88);border:1px solid rgba(255,255,255,0.10);color:#fff;font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;padding:0.28rem 0.45rem;border-radius:999px;backdrop-filter:blur(6px)}
+@media(max-width:900px){.parallax-scene{min-height:380px}.p-layer-car{left:6%;right:4%}.p-layer-solar{width:58%}}
 @keyframes heroIn{from{opacity:0;transform:translateY(18px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
 @media(prefers-reduced-motion:reduce){.hero-copy h1,.hero-sub{animation:none}} 
 @media(max-width:1000px){.hero{min-height:100vh;min-height:100dvh}}
@@ -154,6 +161,24 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 .light .faq p{color:var(--muted)}
 .logos{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between;opacity:0.7}
 .logos span{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700}
+.gallery{background:var(--paper);color:var(--ink)}
+.gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:0.7rem;margin-top:1rem}
+.gallery-card{position:relative;overflow:hidden;border-radius:14px;border:1px solid #E8E2D6;background:var(--paper-2);aspect-ratio:4/3;cursor:zoom-in;transition:transform .18s, box-shadow .18s, border-color .18s}
+.gallery-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(11,11,11,0.08);border-color:var(--ink)}
+.gallery-card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.02) contrast(1.02);transition:transform .35s}
+.gallery-card:hover img{transform:scale(1.03)}
+.gallery-card.wide{grid-column:span 6}
+.gallery-card.tall{grid-column:span 4}
+.gallery-card.square{grid-column:span 3}
+@media(max-width:900px){.gallery-card.wide,.gallery-card.tall,.gallery-card.square{grid-column:span 6}}
+@media(max-width:600px){.gallery-card.wide,.gallery-card.tall,.gallery-card.square{grid-column:span 12}}
+.gallery-meta{position:absolute;inset:auto 0 0 0;padding:0.55rem 0.6rem;background:linear-gradient(180deg, transparent, rgba(11,11,11,0.72));color:#fff;display:flex;justify-content:space-between;align-items:end;gap:0.5rem}
+.gallery-meta b{font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase}
+.gallery-meta span{font-size:0.62rem;opacity:0.9}
+.lightbox{position:fixed;inset:0;background:rgba(5,7,10,0.88);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:60;padding:1rem}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(92vw,1100px);max-height:86vh;border-radius:12px;border:1px solid rgba(255,255,255,0.14);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.lightbox-close{position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,0.96);color:var(--ink);border:none;border-radius:999px;padding:0.5rem 0.75rem;font-weight:700;cursor:pointer}
 .footer{background:#05070A;color:rgba(255,255,255,0.65);border-top:1px solid rgba(255,255,255,0.06);padding:1.4rem var(--pad)}
 .footer a{color:#fff;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,0.25)}
 </style>
@@ -175,7 +200,20 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
     </div>
     <div class="hero-visual" aria-hidden="true">
       <div class="hero-visual-frame">
-        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200&q=80&auto=format&fit=crop" alt="Mercedes-Benz SUV — ShieldX protection, not a saloon" loading="eager">
+        <div class="parallax-scene" id="parallax-scene">
+          <div class="p-layer p-layer-solar" data-depth="0.18">
+            <img src="assets/images/solar-panel.jpg" alt="Solar hybrid — blends with dark green gradient" loading="eager">
+            <span class="p-layer-label">Solar • Hybrid 10kVA</span>
+          </div>
+          <div class="p-layer p-layer-car" data-depth="0.10">
+            <img src="assets/images/car-benz-suv.jpg" alt="Benz SUV — blends with dark green gradient" loading="eager">
+            <span class="p-layer-label">Tracking • Ignition-cut</span>
+          </div>
+          <div class="p-layer p-layer-cctv" data-depth="0.32">
+            <img src="assets/images/cctv-camera.jpg" alt="CCTV 4K ANPR — blends with dark green gradient" loading="eager">
+            <span class="p-layer-label">CCTV • 4K ANPR</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -187,6 +225,38 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
   <span style="display:flex;gap:0.8rem;align-items:center;opacity:0.5;font-size:0.72rem;font-weight:700;letter-spacing:0.06em">FLEETCo • ESTATE 12 • SCHOOL</span>
 </div>
 </div>
+
+<section id="projects" class="gallery" aria-label="Project Gallery">
+  <div class="wrap" style="padding:1.8rem var(--pad) 1.6rem">
+    <div style="display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap">
+      <div>
+        <div class="kicker" style="background:var(--paper-2);border:1px solid #E8E2D6;color:var(--muted)">Project Gallery</div>
+        <h2 style="font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);margin:0.5rem 0 0;font-weight:400;letter-spacing:-0.02em">Field work — <em style="font-family:var(--display);font-style:italic;font-weight:300">as built</em></h2>
+        <p style="color:var(--muted);max-width:38rem;margin:0.5rem 0 0;font-size:0.88rem;line-height:1.5">Every image from <code style="background:var(--paper-2);border:1px solid var(--line);padding:0.1rem 0.35rem;border-radius:6px;font-size:0.78rem">shieldx-website/assets/images</code> — estates, fleets, CCTV, fencing & solar. Click to expand.</p>
+      </div>
+      <span style="font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:700">56 installs • Lagos → nationwide</span>
+    </div>
+    <div class="gallery-grid" id="gallery-grid">
+      <a class="gallery-card wide" href="assets/images/car-benz-suv.jpg"><img src="assets/images/car-benz-suv.jpg" alt="Benz SUV tracking — dark green blend" loading="lazy"><span class="gallery-meta"><b>Tracking</b><span>Ignition-cut</span></span></a>
+      <a class="gallery-card tall" href="assets/images/solar-panel.jpg"><img src="assets/images/solar-panel.jpg" alt="Solar hybrid" loading="lazy"><span class="gallery-meta"><b>Solar</b><span>Hybrid 10kVA</span></span></a>
+      <a class="gallery-card tall" href="assets/images/cctv-camera.jpg"><img src="assets/images/cctv-camera.jpg" alt="CCTV 4K ANPR" loading="lazy"><span class="gallery-meta"><b>CCTV</b><span>4K ANPR</span></span></a>
+      <a class="gallery-card square" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM.jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM.jpeg" alt="Project 01" loading="lazy"><span class="gallery-meta"><b>Estate 01</b><span>Lekki</span></span></a>
+      <a class="gallery-card square" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(1).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(1).jpeg" alt="Project 02" loading="lazy"><span class="gallery-meta"><b>Fence</b><span>12-line</span></span></a>
+      <a class="gallery-card square" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(2).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(2).jpeg" alt="Project 03" loading="lazy"><span class="gallery-meta"><b>CCTV</b><span>NVR</span></span></a>
+      <a class="gallery-card square" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.06%20PM%20(1).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.06%20PM%20(1).jpeg" alt="Project 04" loading="lazy"><span class="gallery-meta"><b>Solar</b><span>Lithium</span></span></a>
+      <a class="gallery-card wide" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.06%20PM.jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.06%20PM.jpeg" alt="Project 05" loading="lazy"><span class="gallery-meta"><b>Perimeter</b><span>Siren</span></span></a>
+      <a class="gallery-card tall" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.07%20PM%20(2).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.07%20PM%20(2).jpeg" alt="Project 06" loading="lazy"><span class="gallery-meta"><b>Site</b><span>Survey</span></span></a>
+      <a class="gallery-card tall" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.08%20PM%20(1).jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.08%20PM%20(1).jpeg" alt="Project 07" loading="lazy"><span class="gallery-meta"><b>Install</b><span>Cabling</span></span></a>
+      <a class="gallery-card square" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.09%20PM.jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.09%20PM.jpeg" alt="Project 08" loading="lazy"><span class="gallery-meta"><b>Estate</b><span>Gate</span></span></a>
+      <a class="gallery-card square" href="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.10%20PM.jpeg"><img src="assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.10%20PM.jpeg" alt="Project 09" loading="lazy"><span class="gallery-meta"><b>Fleet</b><span>Tracking</span></span></a>
+    </div>
+    <div style="margin-top:0.8rem;display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center">
+      <span style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">All photos local — </span><code style="font-size:0.72rem;background:var(--paper-2);border:1px solid var(--line);padding:0.25rem 0.5rem;border-radius:999px">assets/images/*</code>
+      <a href="#contact" class="btn btn-green" style="margin-left:auto;padding:0.6rem 0.9rem;font-size:0.68rem">Request similar →</a>
+    </div>
+  </div>
+</section>
+<div id="lightbox" class="lightbox" aria-hidden="true"><button class="lightbox-close" aria-label="Close">✕</button><img alt="Expanded project image"></div>
 
 <div class="light">
 <div class="wrap">
@@ -340,6 +410,36 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 // reveal on scroll — fluid, no library
 const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:0.12});
 document.querySelectorAll('.reveal, .section, .card, .shop-card, .tcard, .stat, .step').forEach(el=>{el.classList.add('reveal');o.observe(el)});
+// parallax hero — green/dark blended layers
+const scene=document.getElementById('parallax-scene');
+if(scene && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const layers=[...scene.querySelectorAll('.p-layer')];
+  let ticking=false;
+  function onScroll(){
+    const y=window.scrollY;
+    const rect=scene.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom>0;
+    if(!inView) return;
+    layers.forEach(el=>{
+      const d=parseFloat(el.dataset.depth||0.2);
+      const ty = y * d * 0.22;
+      const tilt = y * d * 0.008;
+      el.style.transform = `translate3d(0, ${ty.toFixed(2)}px, 0) rotate(${ (el.classList.contains('p-layer-cctv')?-0.8: el.classList.contains('p-layer-solar')?1:-0.6) + tilt*0.2 }deg)`;
+    });
+  }
+  window.addEventListener('scroll', ()=>{ if(!ticking){ requestAnimationFrame(()=>{onScroll(); ticking=false}); ticking=true }}, {passive:true});
+  onScroll();
+}
+// gallery lightbox
+const lb=document.getElementById('lightbox'), lbImg=lb && lb.querySelector('img'), lbClose=lb && lb.querySelector('.lightbox-close');
+document.getElementById('gallery-grid')?.addEventListener('click', e=>{
+  const a=e.target.closest('a.gallery-card'); if(!a) return; e.preventDefault();
+  lbImg.src=a.href; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+});
+function closeLb(){ if(!lb) return; lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; lbImg.removeAttribute('src'); }
+lbClose?.addEventListener('click', closeLb);
+lb?.addEventListener('click', e=>{ if(e.target===lb) closeLb(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape' && lb?.classList.contains('open')) closeLb(); });
 </script>
 </body>
 </html>
