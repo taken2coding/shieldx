@@ -122,6 +122,21 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 .card:hover p,.card.active p{color:rgba(11,11,11,0.75)}
 .card:hover .num,.card.active .num{color:rgba(11,11,11,0.55)}
 .card:hover .go,.card.active .go{color:var(--ink)}
+.service-modal{position:fixed;inset:0;background:rgba(5,7,10,0.82);backdrop-filter:blur(8px) saturate(1.1);display:none;align-items:center;justify-content:center;z-index:70;padding:1rem}
+.service-modal.open{display:flex}
+.service-modal-box{position:relative;width:min(92vw,860px);max-height:86vh;overflow:auto;background:var(--paper);color:var(--ink);border:1px solid var(--line);box-shadow:0 24px 64px rgba(0,0,0,0.35);display:grid;grid-template-columns:1.1fr 0.9fr;gap:0}
+@media(max-width:800px){.service-modal-box{grid-template-columns:1fr}}
+.service-modal-media{position:relative;overflow:hidden;background:var(--navy);min-height:260px}
+.service-modal-media img{width:100%;height:100%;object-fit:cover;display:block;min-height:260px}
+.service-modal-body{padding:1.4rem 1.2rem}
+.service-modal-body h3{font-family:var(--serif);font-size:1.6rem;margin:0;font-weight:400;letter-spacing:-0.02em}
+.service-modal-body h3 em{font-family:var(--display);font-style:italic;font-weight:300;color:var(--green2)}
+.service-modal-body p{font-size:0.88rem;line-height:1.6;color:#2B2B2B;margin:0.6rem 0 0}
+.service-modal-list{margin:0.8rem 0 0;padding:0;list-style:none;display:grid;gap:0.35rem;font-size:0.82rem;color:#1F2937}
+.service-modal-list li{display:flex;gap:0.5rem}
+.service-modal-list li::before{content:"—";color:var(--green2);font-weight:700}
+.service-modal-close{position:absolute;top:0.6rem;right:0.6rem;background:var(--ink);color:var(--paper);border:1px solid var(--ink);border-radius:999px;padding:0.45rem 0.7rem;font-weight:700;cursor:pointer;z-index:2}
+.service-modal-close:hover{background:#1a1a1a}
 .card .num{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:700}
 .light .card .num{color:rgba(255,255,255,0.55)}
 .card h3{font-family:var(--serif);font-size:1.25rem;margin:0.3rem 0 0;font-weight:400;line-height:1.1;color:#fff}
@@ -218,14 +233,27 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
       <div><div class="kicker" style="color:var(--navy);background:var(--green);border:1px solid var(--green);padding:0.35rem 0.7rem;border-radius:999px;display:inline-flex;font-size:0.78rem;letter-spacing:0.08em;font-weight:800">Our Experience</div><h2 style="font-family:'Montserrat',system-ui,sans-serif;font-size:clamp(1.9rem,3.2vw,2.6rem);margin:0.5rem 0 0;font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:var(--ink)">Nearly a decade of Trust; we secure what matters to you.</h2></div>
     </div>
     <div class="grid3">
-      <div class="card"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">01</div><h3>Tracking</h3><p><b>For the fleet that can't lose one van.</b> Covert + overt, ignition-cut, geofence. Recovery + police report, not just a dot on a map.</p><a href="#quote" class="go">Get tracking →</a></div>
-      <div class="card"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">02</div><h3>CCTV</h3><p><b>For the gate that must remember.</b> 4/8/16ch, ANPR, 30-day. Solar-hybrid so NEPA doesn't blind you.</p><a href="#quote" class="go">See kits →</a></div>
-      <div class="card"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">03</div><h3>Electric Fencing</h3><p><b>For the wall that must bite.</b> 6–12 line, anti-cut/climb, siren + CCTV linked. Perimeter that calls before they climb.</p><a href="#quote" class="go">Secure fence →</a></div>
+      <div class="card"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">01</div><h3>Tracking</h3><p><b>For the fleet that can't lose one van.</b> Covert + overt, ignition-cut, geofence. Recovery + police report, not just a dot on a map.</p><a href="#quote" class="go">Learn More →</a></div>
+      <div class="card"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">02</div><h3>CCTV</h3><p><b>For the gate that must remember.</b> 4/8/16ch, ANPR, 30-day. Solar-hybrid so NEPA doesn't blind you.</p><a href="#quote" class="go">Learn More →</a></div>
+      <div class="card"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">03</div><h3>Electric Fencing</h3><p><b>For the wall that must bite.</b> 6–12 line, anti-cut/climb, siren + CCTV linked. Perimeter that calls before they climb.</p><a href="#quote" class="go">Learn More →</a></div>
     </div>
     <div class="grid3" style="margin-top:0.8rem">
-      <div class="card"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-weight:700">04</div><h3>Solar Hybrid</h3><p><b>For the light that must stay.</b> 3–10kVA lithium + MPPT. Powers fence + NVR + lights when grid fails.</p><a href="#quote" class="go">Power it →</a></div>
+      <div class="card" data-service="solar" tabindex="0" role="button" aria-label="Learn more about Solar Hybrid"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-weight:700">04</div><h3>Solar Hybrid</h3><p><b>For the light that must stay.</b> 3–10kVA lithium + MPPT. Powers fence + NVR + lights when grid fails.</p><a href="#quote" class="go">Learn More →</a></div>
     </div>
   </section>
+<div id="service-modal" class="service-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="service-modal-title">
+  <div class="service-modal-box">
+    <button class="service-modal-close" aria-label="Close">✕</button>
+    <div class="service-modal-media"><img id="service-modal-img" src="" alt="" loading="lazy"></div>
+    <div class="service-modal-body">
+      <div style="font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:700" id="service-modal-kicker">—</div>
+      <h3 id="service-modal-title"></h3>
+      <p id="service-modal-desc"></p>
+      <ul class="service-modal-list" id="service-modal-list"></ul>
+      <a href="#contact" class="btn btn-green" style="margin-top:1rem" onclick="document.getElementById('service-modal').classList.remove('open')">Contact Us →</a>
+    </div>
+  </div>
+</div>
 </div>
 </div>
 
@@ -359,10 +387,80 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 // reveal on scroll — fluid, no library
 const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:0.12});
 document.querySelectorAll('.reveal, .section, .card, .shop-card, .tcard, .stat, .step').forEach(el=>{el.classList.add('reveal');o.observe(el)});
-// service cards — green accent drops left→right on hover/click, smooth dark bg
-document.querySelectorAll('.card').forEach(c=>{
-  c.addEventListener('click', ()=>{ c.classList.toggle('active'); });
+// service cards — green left stripe covers whole card on hover/click + open detail modal
+const serviceData = {
+  tracking: {
+    kicker: "01 — Tracking",
+    title: "Tracking — <em>Motor vehicles</em>",
+    desc: "Covert + overt units with ignition-cut, geofence and driver-log. Built for fleets that cannot lose one van.",
+    img: "assets/images/thumbs/car-benz-suv.jpg",
+    full: "assets/images/car-benz-suv.jpg",
+    alt: "Tracking — Benz SUV placeholder",
+    points: ["Covert + overt units, ignition-cut & tamper alert","Geofence, overspeed, idle + driver log","Recovery assist + police report, 24/7 SOC","Mobile app, backup battery, multi-carrier SIM"]
+  },
+  cctv: {
+    kicker: "02 — CCTV",
+    title: "CCTV — <em>IP & analog</em>",
+    desc: "4/8/16ch NVR, PoE and offsite backup. The gate that must remember — 30-day retention even if NVR is taken.",
+    img: "assets/images/thumbs/cctv-camera.jpg",
+    full: "assets/images/cctv-camera.jpg",
+    alt: "CCTV — 4K ANPR placeholder",
+    points: ["4/8/16ch NVR, PoE, offsite backup","Motion line + plate capture (ANPR)","Mobile view + 30-day retention","Solar-hybrid ready, so NEPA doesn\u2019t blind you"]
+  },
+  fencing: {
+    kicker: "03 — Electric Fencing",
+    title: "Fencing — <em>Electric</em>",
+    desc: "6–12 line, energizer + earth with siren/strobe. The wall that must bite — linked to CCTV + SOC alert.",
+    img: "assets/images/thumbs/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(1).webp",
+    full: "assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(1).jpeg",
+    alt: "Electric fencing — placeholder",
+    points: ["6–12 line, energizer + earth, siren/strobe","Anti-climb, anti-cut, anti-tamper","Linked to CCTV + SOC alert","Licensed install, labelled cabling"]
+  },
+  solar: {
+    kicker: "04 — Solar Hybrid",
+    title: "Solar — <em>Hybrid</em>",
+    desc: "3–10kVA lithium + MPPT with auto bypass. Powers CCTV + fence + lights when grid fails — light when grid fails.",
+    img: "assets/images/thumbs/solar-panel.jpg",
+    full: "assets/images/solar-panel.jpg",
+    alt: "Solar Hybrid — placeholder",
+    points: ["3–10kVA, lithium + MPPT, auto bypass","Powers CCTV + fence + lights on outage","Monitoring + maintenance, 6–12h autonomy","Hybrid, no downtime"]
+  }
+};
+const sModal = document.getElementById('service-modal');
+const sImg = document.getElementById('service-modal-img');
+const sK = document.getElementById('service-modal-kicker');
+const sT = document.getElementById('service-modal-title');
+const sD = document.getElementById('service-modal-desc');
+const sL = document.getElementById('service-modal-list');
+const sClose = sModal && sModal.querySelector('.service-modal-close');
+function openService(key){
+  const d = serviceData[key]; if(!d || !sModal) return;
+  sK.textContent = d.kicker;
+  sT.innerHTML = d.title;
+  sD.textContent = d.desc;
+  sImg.src = d.img; sImg.alt = d.alt; sImg.dataset.full = d.full;
+  sL.innerHTML = d.points.map(p=>`<li>${p}</li>`).join('');
+  sModal.classList.add('open'); sModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+}
+function closeService(){ if(!sModal) return; sModal.classList.remove('open'); sModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+document.querySelectorAll('.card[data-service]').forEach(c=>{
+  c.addEventListener('click', (e)=>{
+    // keep green cover active
+    document.querySelectorAll('.card.active').forEach(x=>{ if(x!==c) x.classList.remove('active'); });
+    c.classList.toggle('active');
+    // open modal if activated
+    if(c.classList.contains('active')){
+      openService(c.dataset.service);
+      // remove active after modal opens to reset green cover? keep for visual
+      setTimeout(()=>c.classList.remove('active'), 600);
+    }
+  });
+  c.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); c.click(); }});
 });
+sClose && sClose.addEventListener('click', closeService);
+sModal && sModal.addEventListener('click', (e)=>{ if(e.target===sModal) closeService(); });
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && sModal && sModal.classList.contains('open')) closeService(); });
+sImg && sImg.addEventListener('click', ()=>{ if(sImg.dataset.full) window.open(sImg.dataset.full, '_blank'); });
 // parallax hero — green/dark blended layers
 const scene=document.getElementById('parallax-scene');
 if(scene && !matchMedia('(prefers-reduced-motion: reduce)').matches){
