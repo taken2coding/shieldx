@@ -63,9 +63,9 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.85'/%3E%3C/svg%3E");
   mix-blend-mode:soft-light;
 }
-.hero-grid{max-width:var(--max);margin:0 auto;padding:clamp(1.4rem,3vw,2.4rem) var(--pad) clamp(2rem,4vw,3rem);width:100%;min-height:inherit;display:flex;align-items:center;position:relative;z-index:2}
-.hero-copy{max-width:100%;width:50vw;min-width:320px}
-.hero-copy h1{font-family:var(--display);font-size:clamp(4rem,6.2vw,6.8rem);line-height:0.88;letter-spacing:-0.055em;margin:0;font-weight:900;color:#fff;text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) both}
+.hero-grid{max-width:var(--max);margin:0 auto;padding:clamp(1.4rem,3vw,2.4rem) var(--pad) clamp(2rem,4vw,3rem);width:100%;min-height:inherit;display:flex;align-items:center;position:relative;z-index:2; top:-100px}
+.hero-copy{max-width:100%;width:80vw;min-width:320px}
+.hero-copy h1{font-family:var(--display);font-size:clamp(4rem,7.2vw,8.8rem);line-height:0.88;letter-spacing:-0.055em;margin:0;font-weight:900;color:#fff;text-wrap:balance;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) both}
 .hero-sub{margin:0.5rem 0 0;font-family:var(--display);font-size:clamp(3.6rem,8vw,6.2rem);line-height:0.88;letter-spacing:-0.055em;font-weight:900;color:#fff;white-space:nowrap;animation:heroIn 900ms cubic-bezier(0.16,1,0.3,1) 140ms both}
 .hero-sub span{color:var(--green);font-weight:900}
 @media(max-width:1100px){.hero-copy{width:58vw} .hero-copy h1{font-size:clamp(2.8rem,5.4vw,4.4rem)} .hero-sub{font-size:clamp(3rem,7vw,5.2rem)}}
@@ -183,7 +183,7 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 </head>
 <body>
 <header class="topbar"><div class="topbar-inner">
-  <a class="brand" href="#"><img src="shieldX_logo.jpeg" alt="ShieldX"/><span><small>Fortifying Your Peace Of Mind</small></span></a>
+  <a class="brand" href="#"><img loading="lazy" decoding="async" src="shieldX_logo.jpeg" alt="ShieldX"/><span><small>Fortifying Your Peace Of Mind</small></span></a>
   <nav class="nav"><a href="#services">Services</a><a href="gallery.html">Project Gallery</a></nav>
   <div style="display:flex;gap:0.5rem;align-items:center">
      <a href="#contact" class="btn btn-contact">Contact Us</a>
@@ -191,7 +191,7 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 </div></header>
 
 <section class="hero" aria-label="ShieldX — hero">
-  <div class="hero-bg" aria-hidden="true"><img src="assets/images/hero_image.jpg" alt="ShieldX hero — Benz, CCTV, solar at sunset" loading="eager"></div>
+  <div class="hero-bg" aria-hidden="true"><picture><source srcset="assets/images/hero_image.webp" type="image/webp"><img src="assets/images/hero_image.jpeg" alt="ShieldX hero — Benz, CCTV, solar at sunset" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080"></picture></div>
   <div class="hero-grid">
     <div class="hero-copy">
       <h1>We Protect what matters to you.</h1>
@@ -242,7 +242,7 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
       <a href="#quote" class="btn btn-green" style="margin-top:0.9rem">See a live demo →</a>
     </div>
     <div style="position:relative">
-      <img src="https://cdn.prod.website-files.com/64735306bb4de7eb23c0f5ee/6475fa8c43b0b0dbb51bc8f4_image.webp" alt="Surveillance" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,0.1)"/>
+      <img loading="lazy" decoding="async" src="https://cdn.prod.website-files.com/64735306bb4de7eb23c0f5ee/6475fa8c43b0b0dbb51bc8f4_image.webp" alt="Surveillance" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,0.1)"/>
       <div style="position:absolute;bottom:0.7rem;left:0.7rem;right:0.7rem;background:rgba(11,18,32,0.9);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.12);color:#fff;border-radius:10px;padding:0.7rem 0.9rem;display:flex;justify-content:space-between;align-items:center"><span style="font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:700">One crew • One log</span><span style="font-size:0.72rem;font-weight:700;color:var(--green)">→</span></div>
     </div>
   </div>
@@ -269,9 +269,9 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
       <a href="#quote" style="font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;border-bottom:1px solid var(--ink);padding-bottom:0.15rem">Get survey →</a>
     </div>
     <div class="shop">
-      <div class="shop-card"><img src="https://cdn.prod.website-files.com/64735306bb4de7eb23c0f655/647606ec213bce2361a195c4_image%203.png" alt="Tracker"/><div class="pad"><h4>Tracker — Covert Mini</h4><div style="font-weight:700;color:var(--green2)">Ask for survey</div><a href="#quote" style="font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;display:inline-flex;gap:0.3rem;margin-top:0.5rem">View Details →</a></div></div>
-      <div class="shop-card"><img src="https://cdn.prod.website-files.com/64735306bb4de7eb23c0f655/647606d6aadf1ade91585232_image%202.png" alt="CCTV"/><div class="pad"><h4>CCTV — 8ch NVR Kit</h4><div style="font-weight:700;color:var(--green2)">Ask for survey</div><a href="#quote" style="font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;display:inline-flex;gap:0.3rem;margin-top:0.5rem">View Details →</a></div></div>
-      <div class="shop-card"><img src="https://cdn.prod.website-files.com/64735306bb4de7eb23c0f655/647606b962e595b7ddfc78d3_image%201.png" alt="Solar + Fence"/><div class="pad"><h4>Fence Energizer + Solar 5kVA</h4><div style="font-weight:700;color:var(--green2)">Ask for survey</div><a href="#quote" style="font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;display:inline-flex;gap:0.3rem;margin-top:0.5rem">View Details →</a></div></div>
+      <div class="shop-card"><img loading="lazy" decoding="async" src="https://cdn.prod.website-files.com/64735306bb4de7eb23c0f655/647606ec213bce2361a195c4_image%203.png" alt="Tracker"/><div class="pad"><h4>Tracker — Covert Mini</h4><div style="font-weight:700;color:var(--green2)">Ask for survey</div><a href="#quote" style="font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;display:inline-flex;gap:0.3rem;margin-top:0.5rem">View Details →</a></div></div>
+      <div class="shop-card"><img loading="lazy" decoding="async" src="https://cdn.prod.website-files.com/64735306bb4de7eb23c0f655/647606d6aadf1ade91585232_image%202.png" alt="CCTV"/><div class="pad"><h4>CCTV — 8ch NVR Kit</h4><div style="font-weight:700;color:var(--green2)">Ask for survey</div><a href="#quote" style="font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;display:inline-flex;gap:0.3rem;margin-top:0.5rem">View Details →</a></div></div>
+      <div class="shop-card"><img loading="lazy" decoding="async" src="https://cdn.prod.website-files.com/64735306bb4de7eb23c0f655/647606b962e595b7ddfc78d3_image%201.png" alt="Solar + Fence"/><div class="pad"><h4>Fence Energizer + Solar 5kVA</h4><div style="font-weight:700;color:var(--green2)">Ask for survey</div><a href="#quote" style="font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;display:inline-flex;gap:0.3rem;margin-top:0.5rem">View Details →</a></div></div>
     </div>
   </section>
 </div>
@@ -285,7 +285,7 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
       <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;margin:0.6rem 0 0">State-of-the-art tech + crew who label every cable and test the siren in front of you. Live view before we leave.</p>
       <div style="margin-top:0.8rem;display:flex;gap:0.6rem;flex-wrap:wrap"><span style="font-size:0.62rem;letter-spacing:0.07em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);padding:0.3rem 0.6rem;border-radius:999px">Labeled cabling</span><span style="font-size:0.62rem;letter-spacing:0.07em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);padding:0.3rem 0.6rem;border-radius:999px">Tested siren</span></div>
     </div>
-    <img src="https://cdn.prod.website-files.com/64735306bb4de7eb23c0f5ee/64760bdf491e945217a963ad_image.webp" alt="ShieldX camera — wcopilot big camera" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,0.1)"/>
+    <img loading="lazy" decoding="async" src="https://cdn.prod.website-files.com/64735306bb4de7eb23c0f5ee/64760bdf491e945217a963ad_image.webp" alt="ShieldX camera — wcopilot big camera" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;border:1px solid rgba(255,255,255,0.1)"/>
   </div>
 </div>
 </section>
@@ -300,7 +300,7 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
         <div class="check"><div><i>✓</i><span><b>Survey</b> — walk, BoQ, timeline in 48h</span></div><div><i>✓</i><span><b>Install</b> — 1–3 days, sign-off on live view</span></div><div><i>✓</i><span><b>Monitor</b> — 24/7 SOC, 2yr warranty, one number</span></div></div>
       </div>
       <div style="position:relative">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&auto=format&fit=crop" alt="How it works" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;border:1px solid #E8E2D6"/>
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&auto=format&fit=crop" alt="How it works" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;border:1px solid #E8E2D6"/>
         <a href="#quote" style="position:absolute;bottom:0.8rem;right:0.8rem;background:var(--green);color:var(--ink);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:800;padding:0.6rem 0.9rem;border-radius:999px;display:inline-flex;gap:0.4rem;align-items:center;box-shadow:0 8px 20px rgba(46,204,113,0.3)">Get Survey ▶</a>
       </div>
     </div>
@@ -349,7 +349,7 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 <footer class="footer" id="contact">
   <div style="max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.2fr 0.8fr;gap:1rem;padding:0 var(--pad)">
     <div>
-      <div style="display:flex;align-items:center;gap:0.6rem"><img src="shieldX_logo.jpeg" alt="ShieldX" style="width:1.8rem;height:1.8rem;background:#fff;border-radius:6px;padding:2px"/><span style="font-weight:800;color:#fff">Shield<span style="color:var(--green)">X</span> <span style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:600">shieldx.ng</span></span></div>
+      <div style="display:flex;align-items:center;gap:0.6rem"><img loading="lazy" decoding="async" src="shieldX_logo.jpeg" alt="ShieldX" style="width:1.8rem;height:1.8rem;background:#fff;border-radius:6px;padding:2px"/><span style="font-weight:800;color:#fff">Shield<span style="color:var(--green)">X</span> <span style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:600">shieldx.ng</span></span></div>
       <div style="font-size:0.72rem;color:rgba(255,255,255,0.6);margin-top:0.6rem">Lagos • Nationwide • CAC Licensed • Fortifying your peace of mind • Africa/Lagos</div>
       <div style="font-size:0.72rem;margin-top:0.6rem"><a href="mailto:hello@shieldx.ng">hello@shieldx.ng</a> • <a href="tel:+2348135078459">08135078459</a> • <a href="https://wa.me/2348135078459">WhatsApp</a></div>
     </div>
