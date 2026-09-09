@@ -234,6 +234,21 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 .lightbox img{max-width:min(92vw,1100px);max-height:86vh;border-radius:0;border:1px solid rgba(255,255,255,0.14);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
 .lightbox-close{position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,0.96);color:var(--ink);border:none;border-radius:0;padding:0.5rem 0.75rem;font-weight:700;cursor:pointer}
 .footer{background:#05070A;color:rgba(255,255,255,0.65);border-top:1px solid rgba(255,255,255,0.06);padding:1.4rem var(--pad)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 0.8fr 0.9fr;gap:1.5rem;align-items:start;text-align:left}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr;gap:1.2rem}}
+.footer-brand p{font-size:0.82rem;color:rgba(255,255,255,0.62);margin:0.6rem 0 0;line-height:1.5;max-width:28rem}
+.footer-contact{margin-top:0.8rem;display:grid;gap:0.45rem;font-size:0.78rem}
+.footer-contact a{display:inline-flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.85);text-decoration:none}
+.footer-contact a:hover{color:#fff}
+.footer-contact .ico{width:1.6rem;height:1.6rem;border-radius:999px;background:rgba(46,204,113,0.14);border:1px solid rgba(46,204,113,0.22);display:grid;place-items:center;font-size:0.72rem;flex-shrink:0}
+.footer-links h4,.footer-social h4{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin:0 0 0.6rem;font-weight:700}
+.footer-links{display:grid;gap:0.4rem}
+.footer-links a{font-size:0.82rem;color:rgba(255,255,255,0.75);text-decoration:none}
+.footer-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.social-row{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.2rem}
+.social-btn{width:2rem;height:2rem;border-radius:999px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);display:grid;place-items:center;color:#fff;font-size:0.78rem;text-decoration:none;transition:.15s}
+.social-btn:hover{background:var(--green);border-color:var(--green);color:var(--ink);transform:translateY(-1px)}
+.footer-bottom{margin-top:1.2rem;padding-top:0.9rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
 .footer a{color:#fff;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,0.25)}
 </style>
 </head>
@@ -278,12 +293,12 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
       <div><div class="kicker" style="color:var(--navy);background:var(--green);border:1px solid var(--green);padding:0.35rem 0.7rem;border-radius:999px;display:inline-flex;font-size:0.78rem;letter-spacing:0.08em;font-weight:800">Our Experience</div><h2 style="font-family:'Instrument Serif',serif;font-size:clamp(1.9rem,3.2vw,2.6rem);margin:0.5rem 0 0;font-weight:400;letter-spacing:-0.02em;line-height:1.25;color:var(--ink)">Nearly a decade of <em style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300">Trust</em>; we secure what matters to you.</h2></div>
     </div>
     <div class="grid3">
-      <div class="card" data-service="tracking" tabindex="0" role="button" aria-label="Learn more about Tracking"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">01</div><h3>Tracking</h3><p><b>For the fleet that can't lose one van.</b> Covert + overt, ignition-cut, geofence. Recovery + police report, not just a dot on a map.</p><a href="#quote" class="go">Learn More →</a></div>
-      <div class="card" data-service="cctv" tabindex="0" role="button" aria-label="Learn more about CCTV"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">02</div><h3>CCTV</h3><p><b>For the gate that must remember.</b> 4/8/16ch, ANPR, 30-day. Solar-hybrid so NEPA doesn't blind you.</p><a href="#quote" class="go">Learn More →</a></div>
-      <div class="card" data-service="fencing" tabindex="0" role="button" aria-label="Learn more about Electric Fencing"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">03</div><h3>Electric Fencing</h3><p><b>For the wall that must bite.</b> 6–12 line, anti-cut/climb, siren + CCTV linked. Perimeter that calls before they climb.</p><a href="#quote" class="go">Learn More →</a></div>
+      <div class="card" data-service="tracking" tabindex="0" role="button" aria-label="Learn more about Tracking"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">01</div><h3>Motor Vehicle Tracking</h3><p><b>Stay ahead of theft with our advanced 4G Anti-jammer tracking device.</b> Geofence, track and shutdown your vehicle anytime</p><a href="#quote" class="go">Learn More →</a></div>
+      <div class="card" data-service="cctv" tabindex="0" role="button" aria-label="Learn more about CCTV"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">02</div><h3>CCTV Installation</h3><p><b>Monitor your home or office from anywhere.</b> 360 degree view, Solar-hybrid so you never worry about downtime.</p><a href="#quote" class="go">Learn More →</a></div>
+      <div class="card" data-service="fencing" tabindex="0" role="button" aria-label="Learn more about Electric Fencing"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">03</div><h3>Electric Fencing</h3><p><b>Walls alone are not enough; protect your perimeter.</b> 6–12 line, anti-cut/climb, fully equipped intrusion detection alert system.</p><a href="#quote" class="go">Learn More →</a></div>
     </div>
     <div class="grid3" style="margin-top:0.8rem">
-      <div class="card" data-service="solar" tabindex="0" role="button" aria-label="Learn more about Solar Hybrid"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-weight:700">04</div><h3>Solar Hybrid</h3><p><b>For the light that must stay.</b> 3–10kVA lithium + MPPT. Powers fence + NVR + lights when grid fails.</p><a href="#quote" class="go">Learn More →</a></div>
+      <div class="card" data-service="solar" tabindex="0" role="button" aria-label="Learn more about Solar Hybrid"><div style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-weight:700">04</div><h3>Solar Installation</h3><p><b>Power your home and office. Enjoy 24/7 power-supply.</b> Featuring 3–10kVA lithium + MPPT. Powers fence when grid fails.</p><a href="#quote" class="go">Learn More →</a></div>
     </div>
   </section>
 <div id="service-modal" class="service-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="service-modal-title">
@@ -307,15 +322,15 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
   <div class="wrap" style="position:relative;z-index:2">
     <div class="why-grid" style="max-width:860px;margin:0 auto;text-align:center;grid-template-columns:1fr">
       <div class="why-copy" style="margin:0 auto;text-align:center">
-        <div class="why-eyebrow" style="justify-content:center;margin:0 auto">Why ShieldX — charming, proven, always on</div>
-        <h2 style="text-align:center;margin:0.6rem auto 0">The line <em>that sings</em> before they touch it</h2>
-        <p style="margin:0.9rem auto 0;text-align:center;max-width:560px">Not a fence. A chorus: siren + strobe + CCTV clip in 8 seconds, offsite even if the NVR walks away. One crew, one log, one number — Lagos built, nationwide trusted.</p>
+        <div class="why-eyebrow" style="justify-content:center;margin:0 auto">Why ShieldX </div>
+        <h2 style="text-align:center;margin:0.6rem auto 0">We protect what matters to you</h2>
+        <p style="margin:0.9rem auto 0;text-align:center;max-width:560px">We are your property bodyguard- Trusted Nationwide.</p>
         <div class="why-checks" style="max-width:560px;margin:1.4rem auto 0;display:grid;gap:0.6rem;justify-items:center">
-          <div class="why-check" style="justify-content:center;text-align:center"><i>✓</i><span>Siren + strobe + CCTV clip to your phone in <b style="color:var(--green)">8s</b></span></div>
-          <div class="why-check" style="justify-content:center;text-align:center"><i>◎</i><span>ANPR + motion line — not endless footage, just the moment</span></div>
-          <div class="why-check" style="justify-content:center;text-align:center"><i>⬡</i><span>Offsite backup even if the NVR is taken — your eyes stay on</span></div>
+          <div class="why-check" style="justify-content:center;text-align:center"><i>✓</i><span>Quality you can trust <b style="color:var(--green)">8s</b></span></div>
+          <div class="why-check" style="justify-content:center;text-align:center"><i>◎</i><span>360 intelligence</span></div>
+          <div class="why-check" style="justify-content:center;text-align:center"><i>⬡</i><span>No Hidden charges</span></div>
         </div>
-        <div style="text-align:center"><a href="gallery.html" class="btn btn-green" style="margin:1.6rem auto 0;display:inline-flex">See live demo →</a></div>
+        <div style="text-align:center"><a href="gallery.html" class="btn btn-green" style="margin:1.6rem auto 0;display:inline-flex">Check out our work →</a></div>
       </div>
     </div>
   </div>
@@ -332,10 +347,10 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
     </div>
     <div style="max-width:760px;margin:1.8rem auto 0;display:grid;gap:0.9rem">
       <div class="faq">
-        <details open><summary>What do you actually install?</summary><p>Tracking (ignition-cut + geofence), CCTV (ANPR on request), electric fencing (6–12 line, pulse), solar hybrid. One survey, one install.</p></details>
-        <details><summary>How do you price? I hate hidden costs.</summary><p>After survey. You get BoQ with core vs full — same site, two honest options. No “per camera” trap.</p></details>
-        <details><summary>Will it stay on when NEPA goes?</summary><p>Yes, if on our solar/hybrid — fence + NVR on lithium, 6–12h. Without solar, fence siren stays, cameras don’t.</p></details>
-        <details><summary>Can it be tampered?</summary><p>Covert + overt trackers, tamper alert, backup battery. Fence is anti-cut/climb — cutting triggers faster than climbing.</p></details>
+        <details open><summary>What do you actually install?</summary><p>4G Anti Jammer (ignition-cut + geofence), CCTV (ANPR on request), electric fencing (6–12 line, pulse), solar hybrid.</p></details>
+        <details><summary>How do you price? </summary><p>Prices are based on service demand. You get a single quote for per request- No hidden charges</p></details>
+        <details><summary>Will your electric fence stay on when NEPA goes?</summary><p>Yes, if on our solar/hybrid — fence + NVR on lithium, 6–12h. Without solar, fence siren stays, cameras don’t.</p></details>
+        <details><summary>Can your tracking device be tampered?</summary><p>Our stealth installation procedure ensures that trackers are tamper-proof.</p></details>
       </div>
     </div>
   </section>
@@ -345,24 +360,51 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
   <section class="section reveal" style="text-align:center">
     <h2>What Our Clients Say</h2>
     <div class="testis" style="margin-top:1rem">
-      <div class="tcard" style="border-radius:16px"><p>“Survey at 4pm, fence + 8 cameras in 2 days. NEPA took light, solar kept everything on. One number.”</p><cite>— Estate Manager, Lekki • Fencing + CCTV + Solar</cite></div>
-      <div class="tcard" style="border-radius:16px"><p>“Geofence at 2:13am, ignition cut worked. Recovered in Magboro same night with report.”</p><cite>— Fleet Owner, 18 vans • Tracking</cite></div>
-      <div class="tcard" style="border-radius:16px"><p>“No upsell. They hardened the NVR and told us what we didn’t need.”</p><cite>— SME • CCTV + Cyber hygiene</cite></div>
+      <div class="tcard" style="border-radius:16px"><p>“ShieldX provides reliable services. My CCTV has been on and active since 2022.”</p><cite>— Annonymous, Lekki, Lagos </cite></div>
+      <div class="tcard" style="border-radius:16px"><p>“SheildX is my plug for my logistic company. I recommed them.”</p><cite>Stev, Berger, Lagos</cite></div>
+      <div class="tcard" style="border-radius:16px"><p>“Solid team- always available when we call”</p><cite>— SME Outfit, Lagos, Nigeria</cite></div>
     </div>
   </section>
 </div>
 </div>
 
 <footer class="footer" id="contact">
-  <div style="max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.2fr 0.8fr;gap:1rem;padding:0 var(--pad)">
-    <div>
-      <div style="display:flex;align-items:center;gap:0.6rem"><img loading="lazy" decoding="async" src="shieldX_logo.jpeg" alt="ShieldX" style="width:1.8rem;height:1.8rem;background:#fff;border-radius:6px;padding:2px"/><span style="font-weight:800;color:#fff">Shield<span style="color:var(--green)">X</span> <span style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:600">shieldx.ng</span></span></div>
-      <div style="font-size:0.72rem;color:rgba(255,255,255,0.6);margin-top:0.6rem">Lagos • Nationwide • CAC Licensed • Fortifying your peace of mind • Africa/Lagos</div>
-      <div style="font-size:0.72rem;margin-top:0.6rem"><a href="mailto:hello@shieldx.ng">hello@shieldx.ng</a> • <a href="tel:+2348135078459">08135078459</a> • <a href="https://wa.me/2348135078459">WhatsApp</a></div>
+  <div style="max-width:var(--max);margin:0 auto;padding:0 var(--pad)">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:0.6rem"><img loading="lazy" decoding="async" src="shieldX_logo.jpeg" alt="ShieldX" style="width:2rem;height:2rem;background:#fff;border-radius:8px;padding:3px;object-fit:contain"/><span style="font-weight:800;color:#fff;font-size:1.05rem">Shield<span style="color:var(--green)">X</span></span><span style="font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-left:0.4rem">shieldx.ng</span></div>
+        <p>Fortifying Your Peace Of Mind — 19 Somoye Street, Orile-Agege, Lagos. CAC licensed, nationwide.</p>
+        <div class="footer-contact">
+          <a href="tel:+2348135078459"><span class="ico">☎</span> 0813 507 8459</a>
+          <a href="mailto:shield9ja@gmail.com"><span class="ico">✉</span> shield9ja@gmail.com</a>
+          <a href="https://wa.me/2348135078459" target="_blank" rel="noopener"><span class="ico">◈</span> WhatsApp — chat instantly</a>
+          <a href="https://maps.google.com/?q=19+Somoye+Street+Orile+Agege+Lagos" target="_blank" rel="noopener"><span class="ico">◎</span> 19 Somoye St, Orile-Agege</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="#services">Our Experience</a>
+        <a href="gallery.html">Project Gallery</a>
+        <a href="#faq">FAQ</a>
+        <a href="mailto:shield9ja@gmail.com">Support</a>
+      </div>
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="social-row">
+          <a class="social-btn" href="https://wa.me/2348135078459" target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
+          <a class="social-btn" href="tel:+2348135078459" aria-label="Phone">☎</a>
+          <a class="social-btn" href="mailto:shield9ja@gmail.com" aria-label="Email">✉</a>
+          <a class="social-btn" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a class="social-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+          <a class="social-btn" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a class="social-btn" href="https://x.com" target="_blank" rel="noopener" aria-label="X">𝕏</a>
+        </div>
+        <a href="#contact" class="btn btn-green" style="margin-top:0.9rem;display:inline-flex">Get Free Quote →</a>
+        <div style="font-size:0.62rem;color:rgba(255,255,255,0.45);margin-top:0.6rem">Mon–Sat 8am–6pm WAT • 24/7 SOC</div>
+      </div>
     </div>
-    <div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:0.72rem;align-items:center"><a href="#services">Services</a><a href="gallery.html">Project Gallery</a></div>
+    <div class="footer-bottom"><span>© 2026 ShieldX Limited. All Rights Reserved.</span><span>shieldx.ng • Fortifying your peace of mind • Africa/Lagos</span></div>
   </div>
-  <div style="max-width:var(--max);margin:0 auto;margin-top:1rem;padding:0 var(--pad);padding-top:0.8rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4)"><span>© ShieldX Limited. All Rights Reserved.</span><span>shieldx.ng • Fortifying your peace of mind</span></div>
 </footer>
 <script>
 // reveal on scroll — fluid, no library
@@ -372,28 +414,28 @@ document.querySelectorAll('.reveal, .section, .card, .shop-card, .tcard, .stat, 
 const serviceData = {
   tracking: {
     kicker: "01 — Tracking",
-    title: "Tracking — <em>Motor vehicles</em>",
-    desc: "Covert + overt units with ignition-cut, geofence and driver-log. Built for fleets that cannot lose one van.",
-    img: "assets/images/thumbs/car-benz-suv.jpg",
-    full: "assets/images/car-benz-suv.jpg",
+    title: "Tracking — <em>Motor vehicle/ Tricycle/ Motocycle/ Trucks</em>",
+    desc: "Our tracking device features 4G Anti-jammer,  ignition-cut, Audio transmission, geofence and driver-log: A complete tracking suite",
+    img: "assets/images/thumbs/benzo_red.jpg",
+    full: "assets/images/benzo_red.jpg",
     alt: "Tracking — Benz SUV placeholder",
-    points: ["Covert + overt units, ignition-cut & tamper alert","Geofence, overspeed, idle + driver log","Recovery assist + police report, 24/7 SOC","Mobile app, backup battery, multi-carrier SIM"]
+    points: ["Stealth installation procedure, ignition-cut & tamper alert","Geofence, overspeed, Audio Transmission, idle + driver log","Recovery assist","Mobile app, backup battery, multi-carrier SIM"]
   },
   cctv: {
     kicker: "02 — CCTV",
     title: "CCTV — <em>IP & analog</em>",
-    desc: "4/8/16ch NVR, PoE and offsite backup. The gate that must remember — 30-day retention even if NVR is taken.",
-    img: "assets/images/thumbs/cctv-camera.jpg",
-    full: "assets/images/cctv-camera.jpg",
+    desc: "4/8/16ch NVR, PoE and offsite backup. Robust retention even if NVR is taken.",
+    img: "assets/images/thumbs/cctv_.webp",
+    full: "assets/images/cctv_.webp",
     alt: "CCTV — 4K ANPR placeholder",
-    points: ["4/8/16ch NVR, PoE, offsite backup","Motion line + plate capture (ANPR)","Mobile view + 30-day retention","Solar-hybrid ready, so NEPA doesn\u2019t blind you"]
+    points: ["4/8/16ch NVR, PoE, offsite backup","Motion line + plate capture (ANPR)","Mobile view + 30-day retention","Solar-hybrid ready, stay ahead"]
   },
   fencing: {
     kicker: "03 — Electric Fencing",
-    title: "Fencing — <em>Electric</em>",
+    title: "Fencing — <em>Electric guardrail</em>",
     desc: "6–12 line, energizer + earth with siren/strobe. The wall that must bite — linked to CCTV + SOC alert.",
-    img: "assets/images/thumbs/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(1).webp",
-    full: "assets/images/WhatsApp%20Image%202026-09-08%20at%2010.54.05%20PM%20(1).jpeg",
+    img: "assets/images/thumbs/electric_f.jpg",
+    full: "assets/images/electric_f.jpg",
     alt: "Electric fencing — placeholder",
     points: ["6–12 line, energizer + earth, siren/strobe","Anti-climb, anti-cut, anti-tamper","Linked to CCTV + SOC alert","Licensed install, labelled cabling"]
   },
@@ -401,8 +443,8 @@ const serviceData = {
     kicker: "04 — Solar Hybrid",
     title: "Solar — <em>Hybrid</em>",
     desc: "3–10kVA lithium + MPPT with auto bypass. Powers CCTV + fence + lights when grid fails — light when grid fails.",
-    img: "assets/images/thumbs/solar-panel.jpg",
-    full: "assets/images/solar-panel.jpg",
+    img: "assets/images/thumbs/solarf_.jpg",
+    full: "assets/images/solarf_.jpg",
     alt: "Solar Hybrid — placeholder",
     points: ["3–10kVA, lithium + MPPT, auto bypass","Powers CCTV + fence + lights on outage","Monitoring + maintenance, 6–12h autonomy","Hybrid, no downtime"]
   }
