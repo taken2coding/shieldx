@@ -52,6 +52,21 @@ a{color:inherit;text-decoration:none}
 .lightbox-close{position:absolute;top:1rem;right:1rem;background:#fff;color:var(--ink);border:none;border-radius:999px;padding:0.55rem 0.85rem;font-weight:800;cursor:pointer}
 .footer{background:#05070A;color:rgba(255,255,255,0.65);border-top:1px solid rgba(255,255,255,0.06);padding:1.4rem var(--pad);text-align:center;font-size:0.72rem}
 .footer a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 0.8fr 0.9fr;gap:1.5rem;align-items:start;text-align:left}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr;gap:1.2rem}}
+.footer-brand p{font-size:0.82rem;color:rgba(255,255,255,0.62);margin:0.6rem 0 0;line-height:1.5;max-width:28rem}
+.footer-contact{margin-top:0.8rem;display:grid;gap:0.45rem;font-size:0.78rem}
+.footer-contact a{display:inline-flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.85);text-decoration:none}
+.footer-contact a:hover{color:#fff}
+.footer-contact .ico{width:1.6rem;height:1.6rem;border-radius:999px;background:rgba(46,204,113,0.14);border:1px solid rgba(46,204,113,0.22);display:grid;place-items:center;font-size:0.72rem;flex-shrink:0}
+.footer-links h4,.footer-social h4{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin:0 0 0.6rem;font-weight:700}
+.footer-links{display:grid;gap:0.4rem}
+.footer-links a{font-size:0.82rem;color:rgba(255,255,255,0.75);text-decoration:none}
+.footer-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.social-row{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.2rem}
+.social-btn{width:2rem;height:2rem;border-radius:999px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);display:grid;place-items:center;color:#fff;font-size:0.78rem;text-decoration:none;transition:.15s}
+.social-btn:hover{background:var(--green);border-color:var(--green);color:var(--ink);transform:translateY(-1px)}
+.footer-bottom{margin-top:1.2rem;padding-top:0.9rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);text-align:center}
 </style>
 </head>
 <body>
@@ -184,7 +199,7 @@ a{color:inherit;text-decoration:none}
         <div style="font-size:0.62rem;color:rgba(255,255,255,0.45);margin-top:0.6rem">Mon–Sat 8am–6pm WAT • 24/7 SOC</div>
       </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 ShieldX Limited. All Rights Reserved.</span><span>shieldx.ng • Fortifying your peace of mind • Africa/Lagos</span></div>
+    <div class="footer-bottom" style="justify-content:center;text-align:center"><span>© 2026 ShieldX Limited. All Rights Reserved.</span></div>
   </div>
 </footer>
 
