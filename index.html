@@ -32,6 +32,13 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 .brand small{display:block;font-size:0.82rem;letter-spacing:0.02em;text-transform:none;color:rgba(255,255,255,0.92);font-weight:500;font-style:italic;margin-top:0.15rem}
 .nav{display:flex;gap:1rem;align-items:center;font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,0.65)}
 .nav a:hover{color:#fff}
+.hamburger{display:none;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.06);color:#fff;border-radius:8px;cursor:pointer;font-size:1.15rem;line-height:1}
+.hamburger[aria-expanded="true"]{background:var(--green);color:var(--ink);border-color:var(--green)}
+.mobile-nav{position:absolute;top:100%;left:0;right:0;background:rgba(8,12,20,0.98);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);display:none;flex-direction:column;gap:0;padding:0.6rem var(--pad) 0.8rem;z-index:40}
+.mobile-nav.open{display:flex}
+.mobile-nav a{padding:0.85rem 0.2rem;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.06)}
+.mobile-nav a:last-child{border-bottom:none}
+.mobile-nav .btn-contact{justify-content:center;margin-top:0.4rem}
 .btn{font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;padding:0.75rem 1.1rem;border-radius:999px;display:inline-flex;align-items:center;gap:0.4rem;transition:.15s;border:1px solid transparent}
 .btn-green{background:var(--green);color:var(--ink);border-color:var(--green)}
 .btn-green:hover{background:var(--green2);transform:translateY(-1px);box-shadow:0 8px 20px rgba(46,204,113,0.3)}
@@ -39,7 +46,7 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 .btn-ghost:hover{background:rgba(255,255,255,0.1)}
 .btn-contact{background:var(--green);color:var(--ink);border:1px solid var(--green);padding:0.55rem 1rem;font-size:0.68rem;letter-spacing:0.08em;box-shadow:0 4px 14px rgba(46,204,113,0.22)}
 .btn-contact:hover{background:#fff;border-color:#fff;color:var(--ink);transform:translateY(-1px);box-shadow:0 6px 18px rgba(255,255,255,0.16),0 4px 14px rgba(46,204,113,0.18)}
-@media(max-width:900px){.nav{display:none}}
+@media(max-width:900px){.nav{display:none}.hide-mobile{display:none}.hamburger{display:inline-flex}}
 /* hero — blurred Range Rover background rich modern */
 .hero{
   color:#fff;position:relative;overflow:hidden;
@@ -229,11 +236,18 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 <body>
 <header class="topbar"><div class="topbar-inner">
   <a class="brand" href="index.html"><img src="shieldX_logo.jpeg" alt="ShieldX"/><span><small>Fortifying Your Peace Of Mind</small></span></a>
-  <div style="display:flex;align-items:center;gap:1rem;margin-left:auto">
+  <div style="display:flex;align-items:center;gap:0.6rem;margin-left:auto">
     <nav class="nav"><a href="#services">Services</a><a href="gallery.html">Project Gallery</a></nav>
-    <a href="#contact" class="btn btn-contact">Contact Us</a>
+    <a href="#contact" class="btn btn-contact hide-mobile">Contact Us</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">☰</button>
   </div>
-</div></header>
+</div>
+<div id="mobile-nav" class="mobile-nav" hidden>
+  <a href="#services">Services</a>
+  <a href="gallery.html">Project Gallery</a>
+  <a href="#contact" class="btn btn-contact">Contact Us</a>
+</div>
+</header>
 
 <section class="hero" aria-label="ShieldX — hero">
   <div class="hero-bg" aria-hidden="true"><picture><source srcset="assets/images/hero_image_5.png" type="image/webp"><img src="assets/images/hero_image.jpeg" alt="ShieldX hero — Benz, CCTV, solar at sunset" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080"></picture></div>
@@ -287,7 +301,7 @@ h1{font-size:clamp(2.4rem,5.2vw,4.6rem)}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 <section class="why-trendy">
   <div class="why-bg" aria-hidden="true"><img src="assets/images/benzo_salon.jpg" alt="Benz salon — Why ShieldX background, blended" loading="lazy" decoding="async"></div>
   <div class="wrap" style="position:relative;z-index:2">
-    <div class="why-grid" style="max-width:860px;margin:0 auto;text-align:center">
+    <div class="why-grid" style="max-width:860px;margin:0 auto;text-align:center;grid-template-columns:1fr">
       <div class="why-copy" style="margin:0 auto;text-align:center">
         <div class="why-eyebrow" style="justify-content:center;margin:0 auto">Why ShieldX — charming, proven, always on</div>
         <h2 style="text-align:center;margin:0.6rem auto 0">The line <em>that sings</em> before they touch it</h2>
@@ -406,6 +420,26 @@ function openService(key){
   sModal.classList.add('open'); sModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
 }
 function closeService(){ if(!sModal) return; sModal.classList.remove('open'); sModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+// hamburger — small screens
+const burger=document.querySelector('.hamburger'), mNav=document.getElementById('mobile-nav');
+if(burger && mNav){
+  burger.addEventListener('click', ()=>{
+    const open=burger.getAttribute('aria-expanded')==='true';
+    burger.setAttribute('aria-expanded', String(!open));
+    mNav.hidden=open;
+    mNav.classList.toggle('open', !open);
+    if(!open && sModal && sModal.classList.contains('open')) closeService();
+    document.body.style.overflow = !open ? 'hidden' : '';
+  });
+  mNav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+    burger.setAttribute('aria-expanded','false'); mNav.hidden=true; mNav.classList.remove('open'); document.body.style.overflow='';
+  }));
+  document.addEventListener('click', (e)=>{
+    if(!mNav.hidden && !mNav.contains(e.target) && !burger.contains(e.target)){
+      burger.setAttribute('aria-expanded','false'); mNav.hidden=true; mNav.classList.remove('open'); document.body.style.overflow='';
+    }
+  });
+}
 document.querySelectorAll('.card[data-service]').forEach(c=>{
   c.addEventListener('click', (e)=>{
     // keep green cover active
