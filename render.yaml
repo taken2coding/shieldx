@@ -22,7 +22,7 @@ services:
         value: max-age=31536000; includeSubDomains; preload
       - path: /*
         name: Content-Security-Policy
-        value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com; font-src 'self' https://fonts.gstatic.com https://api.fontshare.com data:; img-src 'self' data: https://images.unsplash.com https://cdn.prod.website-files.com https://videos.pexels.com https://images.pexels.com; media-src 'self' https://videos.pexels.com; frame-ancestors 'none'"
+        value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com https://umami-postgresql-latest-8xgn.onrender.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com; font-src 'self' https://fonts.gstatic.com https://api.fontshare.com data:; img-src 'self' data: https://images.unsplash.com https://cdn.prod.website-files.com https://videos.pexels.com https://images.pexels.com; media-src 'self' https://videos.pexels.com; connect-src 'self' https://fonts.googleapis.com https://api.fontshare.com https://umami-postgresql-latest-8xgn.onrender.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests"
     routes:
       - type: rewrite
         source: /*
